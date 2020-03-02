@@ -1,4 +1,5 @@
 import csv
+import os
 
 STATUSES_FILE = './data/statuses.csv'
 BOARDS_FILE = './data/boards.csv'
