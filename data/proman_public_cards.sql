@@ -1,0 +1,12 @@
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (5, 1, 'done card 1', 4, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (4, 1, 'planning', 3, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (6, 1, 'done card 1', 4, 1);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (11, 2, 'done card 1', 4, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (10, 2, 'planning', 3, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (9, 2, 'in progress card', 2, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (7, 2, 'new card 1', 1, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (8, 2, 'new card 2', 1, 1);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (3, 1, 'in progress card', 2, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (1, 1, 'new card 1', 1, 0);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (2, 1, 'new card 2', 1, 1);
+INSERT INTO public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) VALUES (12, 2, 'done card 1', 4, 1);
