@@ -1,4 +1,5 @@
 import persistence
+import os
 import psycopg2
 import psycopg2.extras
 
@@ -31,9 +32,6 @@ def get_cards_for_board(board_id):
             matching_cards.append(card)
     return matching_cards
 
-import os
-import psycopg2
-import psycopg2.extras
 
 
 def get_connection_string():
