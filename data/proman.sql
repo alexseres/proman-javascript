@@ -17,13 +17,13 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: boards; Type: SCHEMA; Schema: -; Owner: mark_frojim
+-- Name: boards; Type: SCHEMA; Schema: -; Owner: csandras
 --
 
 CREATE SCHEMA boards;
 
 
-ALTER SCHEMA boards OWNER TO mark_frojim;
+ALTER SCHEMA boards OWNER TO csandras;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
@@ -44,7 +44,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: boards; Type: TABLE; Schema: public; Owner: mark_frojim
+-- Name: boards; Type: TABLE; Schema: public; Owner: csandras
 --
 
 CREATE TABLE public.boards (
@@ -53,10 +53,10 @@ CREATE TABLE public.boards (
 );
 
 
-ALTER TABLE public.boards OWNER TO mark_frojim;
+ALTER TABLE public.boards OWNER TO csandras;
 
 --
--- Name: boards_boards_id_seq; Type: SEQUENCE; Schema: public; Owner: mark_frojim
+-- Name: boards_boards_id_seq; Type: SEQUENCE; Schema: public; Owner: csandras
 --
 
 CREATE SEQUENCE public.boards_boards_id_seq
@@ -67,17 +67,17 @@ CREATE SEQUENCE public.boards_boards_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.boards_boards_id_seq OWNER TO mark_frojim;
+ALTER TABLE public.boards_boards_id_seq OWNER TO csandras;
 
 --
--- Name: boards_boards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mark_frojim
+-- Name: boards_boards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: csandras
 --
 
 ALTER SEQUENCE public.boards_boards_id_seq OWNED BY public.boards.boards_id;
 
 
 --
--- Name: cards; Type: TABLE; Schema: public; Owner: mark_frojim
+-- Name: cards; Type: TABLE; Schema: public; Owner: csandras
 --
 
 CREATE TABLE public.cards (
@@ -89,10 +89,10 @@ CREATE TABLE public.cards (
 );
 
 
-ALTER TABLE public.cards OWNER TO mark_frojim;
+ALTER TABLE public.cards OWNER TO csandras;
 
 --
--- Name: cards_cards_id_seq; Type: SEQUENCE; Schema: public; Owner: mark_frojim
+-- Name: cards_cards_id_seq; Type: SEQUENCE; Schema: public; Owner: csandras
 --
 
 CREATE SEQUENCE public.cards_cards_id_seq
@@ -103,17 +103,17 @@ CREATE SEQUENCE public.cards_cards_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.cards_cards_id_seq OWNER TO mark_frojim;
+ALTER TABLE public.cards_cards_id_seq OWNER TO csandras;
 
 --
--- Name: cards_cards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mark_frojim
+-- Name: cards_cards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: csandras
 --
 
 ALTER SEQUENCE public.cards_cards_id_seq OWNED BY public.cards.cards_id;
 
 
 --
--- Name: statuses; Type: TABLE; Schema: public; Owner: mark_frojim
+-- Name: statuses; Type: TABLE; Schema: public; Owner: csandras
 --
 
 CREATE TABLE public.statuses (
@@ -122,10 +122,10 @@ CREATE TABLE public.statuses (
 );
 
 
-ALTER TABLE public.statuses OWNER TO mark_frojim;
+ALTER TABLE public.statuses OWNER TO csandras;
 
 --
--- Name: statuses_statuses_id_seq; Type: SEQUENCE; Schema: public; Owner: mark_frojim
+-- Name: statuses_statuses_id_seq; Type: SEQUENCE; Schema: public; Owner: csandras
 --
 
 CREATE SEQUENCE public.statuses_statuses_id_seq
@@ -136,38 +136,38 @@ CREATE SEQUENCE public.statuses_statuses_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.statuses_statuses_id_seq OWNER TO mark_frojim;
+ALTER TABLE public.statuses_statuses_id_seq OWNER TO csandras;
 
 --
--- Name: statuses_statuses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mark_frojim
+-- Name: statuses_statuses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: csandras
 --
 
 ALTER SEQUENCE public.statuses_statuses_id_seq OWNED BY public.statuses.statuses_id;
 
 
 --
--- Name: boards boards_id; Type: DEFAULT; Schema: public; Owner: mark_frojim
+-- Name: boards boards_id; Type: DEFAULT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.boards ALTER COLUMN boards_id SET DEFAULT nextval('public.boards_boards_id_seq'::regclass);
 
 
 --
--- Name: cards cards_id; Type: DEFAULT; Schema: public; Owner: mark_frojim
+-- Name: cards cards_id; Type: DEFAULT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.cards ALTER COLUMN cards_id SET DEFAULT nextval('public.cards_cards_id_seq'::regclass);
 
 
 --
--- Name: statuses statuses_id; Type: DEFAULT; Schema: public; Owner: mark_frojim
+-- Name: statuses statuses_id; Type: DEFAULT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.statuses ALTER COLUMN statuses_id SET DEFAULT nextval('public.statuses_statuses_id_seq'::regclass);
 
 
 --
--- Data for Name: boards; Type: TABLE DATA; Schema: public; Owner: mark_frojim
+-- Data for Name: boards; Type: TABLE DATA; Schema: public; Owner: csandras
 --
 
 COPY public.boards (boards_id, boards_title) FROM stdin;
@@ -177,7 +177,7 @@ COPY public.boards (boards_id, boards_title) FROM stdin;
 
 
 --
--- Data for Name: cards; Type: TABLE DATA; Schema: public; Owner: mark_frojim
+-- Data for Name: cards; Type: TABLE DATA; Schema: public; Owner: csandras
 --
 
 COPY public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) FROM stdin;
@@ -197,7 +197,7 @@ COPY public.cards (cards_id, boards_id, cards_title, statuses_id, cards_order) F
 
 
 --
--- Data for Name: statuses; Type: TABLE DATA; Schema: public; Owner: mark_frojim
+-- Data for Name: statuses; Type: TABLE DATA; Schema: public; Owner: csandras
 --
 
 COPY public.statuses (statuses_id, statuses_title) FROM stdin;
@@ -209,28 +209,28 @@ COPY public.statuses (statuses_id, statuses_title) FROM stdin;
 
 
 --
--- Name: boards_boards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mark_frojim
+-- Name: boards_boards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: csandras
 --
 
 SELECT pg_catalog.setval('public.boards_boards_id_seq', 2, true);
 
 
 --
--- Name: cards_cards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mark_frojim
+-- Name: cards_cards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: csandras
 --
 
 SELECT pg_catalog.setval('public.cards_cards_id_seq', 12, true);
 
 
 --
--- Name: statuses_statuses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mark_frojim
+-- Name: statuses_statuses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: csandras
 --
 
 SELECT pg_catalog.setval('public.statuses_statuses_id_seq', 4, true);
 
 
 --
--- Name: boards boards_pk; Type: CONSTRAINT; Schema: public; Owner: mark_frojim
+-- Name: boards boards_pk; Type: CONSTRAINT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.boards
@@ -238,7 +238,7 @@ ALTER TABLE ONLY public.boards
 
 
 --
--- Name: cards cards_pk; Type: CONSTRAINT; Schema: public; Owner: mark_frojim
+-- Name: cards cards_pk; Type: CONSTRAINT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.cards
@@ -246,7 +246,7 @@ ALTER TABLE ONLY public.cards
 
 
 --
--- Name: statuses statuses_pk; Type: CONSTRAINT; Schema: public; Owner: mark_frojim
+-- Name: statuses statuses_pk; Type: CONSTRAINT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.statuses
@@ -254,28 +254,28 @@ ALTER TABLE ONLY public.statuses
 
 
 --
--- Name: boards_boards_id_uindex; Type: INDEX; Schema: public; Owner: mark_frojim
+-- Name: boards_boards_id_uindex; Type: INDEX; Schema: public; Owner: csandras
 --
 
 CREATE UNIQUE INDEX boards_boards_id_uindex ON public.boards USING btree (boards_id);
 
 
 --
--- Name: cards_cards_id_uindex; Type: INDEX; Schema: public; Owner: mark_frojim
+-- Name: cards_cards_id_uindex; Type: INDEX; Schema: public; Owner: csandras
 --
 
 CREATE UNIQUE INDEX cards_cards_id_uindex ON public.cards USING btree (cards_id);
 
 
 --
--- Name: statuses_statuses_id_uindex; Type: INDEX; Schema: public; Owner: mark_frojim
+-- Name: statuses_statuses_id_uindex; Type: INDEX; Schema: public; Owner: csandras
 --
 
 CREATE UNIQUE INDEX statuses_statuses_id_uindex ON public.statuses USING btree (statuses_id);
 
 
 --
--- Name: cards boards_id; Type: FK CONSTRAINT; Schema: public; Owner: mark_frojim
+-- Name: cards boards_id; Type: FK CONSTRAINT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.cards
@@ -283,7 +283,7 @@ ALTER TABLE ONLY public.cards
 
 
 --
--- Name: cards statuses_id; Type: FK CONSTRAINT; Schema: public; Owner: mark_frojim
+-- Name: cards statuses_id; Type: FK CONSTRAINT; Schema: public; Owner: csandras
 --
 
 ALTER TABLE ONLY public.cards
