@@ -10,10 +10,10 @@ _cache = {}  # We store cached data in this dict to avoid multiple file readings
 
 
 @connection_handler
-def get_query(cursor, table):
-    cursor.execute(table)
-    query = cursor.fetchall()
-    return query
+def get_query(cursor, query):
+    cursor.execute(query)
+    table = cursor.fetchall()
+    return table
 
 
 def _get_data(data_type, table, force):

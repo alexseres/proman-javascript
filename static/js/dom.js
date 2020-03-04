@@ -34,10 +34,29 @@ export let dom = {
     },
     loadCards: function (boardId) {
         // retrieves cards and makes showCards called
+        dataHandler.getCardsByBoardId(boardId, function(cards){
+            dom.showCards(cards);
+        });
     },
     showCards: function (cards) {
         // shows the cards of a board
         // it adds necessary event listeners also
+        let cardList = '';
+
+        for(let card of cards){
+            cardList += `
+                <li>${card.cards_id}</li>
+            `;
+        }
+
+        const outerHtml = `
+            <ul class="card-container">
+                ${cardList}
+            </ul>
+        `;
+
+        let cardsContainer = document.querySelector('#cards');
+        cardsContainer.insertAdjacentHTML("beforeend", outerHtml);
     },
     // here comes more features
 };

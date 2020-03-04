@@ -43,6 +43,15 @@ export let dataHandler = {
     },
     getCardsByBoardId: function (boardId, callback) {
         // the cards are retrieved and then the callback function is called with the cards
+
+        // the boards are retrieved and then the callback function is called with the boards
+
+        // Here we use an arrow function to keep the value of 'this' on dataHandler.
+        //    if we would use function(){...} here, the value of 'this' would change.
+        this._api_get(`/get-cards/${boardId}`, (response) => {
+            this._data = response;
+            callback(response);
+        });
     },
     getCard: function (cardId, callback) {
         // the card is retrieved and then the callback function is called with the card
