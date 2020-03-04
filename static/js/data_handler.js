@@ -40,6 +40,10 @@ export let dataHandler = {
     },
     getStatus: function (statusId, callback) {
         // the status is retrieved and then the callback function is called with the status
+        this._api_get(`/get-statuses/${statusId}`, (response) => {
+            this._data = response;
+            callback(response);
+        });
     },
     getCardsByBoardId: function (boardId, callback) {
         // the cards are retrieved and then the callback function is called with the cards
@@ -50,7 +54,7 @@ export let dataHandler = {
         //    if we would use function(){...} here, the value of 'this' would change.
         this._api_get(`/get-cards/${boardId}`, (response) => {
             this._data = response;
-            callback(response);
+            callback(response)
         });
     },
     getCard: function (cardId, callback) {

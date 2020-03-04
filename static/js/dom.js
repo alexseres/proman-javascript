@@ -45,7 +45,7 @@ export let dom = {
 
         for(let card of cards){
             cardList += `
-                <li>${card.cards_id}</li>
+                <li>${card.cards_title}</li>
             `;
         }
 
@@ -59,4 +59,25 @@ export let dom = {
         cardsContainer.insertAdjacentHTML("beforeend", outerHtml);
     },
     // here comes more features
+    loadStatus: function (statusId) {
+        // retrieves statuses and makes showStatuses called
+        dataHandler.getStatus(statusId, function(status){
+            dom.showStatus(status);
+        });
+    },
+    showStatus: function (status) {
+        // shows the cards of a board
+        // it adds necessary event listeners also
+        let statusList = '';
+        statusList += `<li>${status}</li>`;
+
+        const outerHtml = `
+            <ul class="status-container">
+                ${statusList}
+            </ul>
+        `;
+
+        let statusContainer = document.querySelector('#statuses');
+        statusContainer.insertAdjacentHTML("beforeend", outerHtml);
+    }
 };
