@@ -17,7 +17,8 @@ export let dom = {
 
         let temp = document.getElementsByTagName("template")[0];
         for(let board of boards){
-            temp.content.getElementById("test").innerText = `${board.boards_title}`;
+            dom.loadCards(board.boards_id);
+            temp.content.getElementById("board-header").innerText = `${board.boards_title}`;
             let clone = temp.content.cloneNode(true);
             document.body.appendChild(clone);
         }
@@ -32,23 +33,10 @@ export let dom = {
     showCards: function (cards) {
         // shows the cards of a board
         // it adds necessary event listeners also
-        let cardList = '';
-
-        for(let card of cards){
-            cardList += `
-                <li>${card.cards_title}</li>
-            `;
+        for (let card of cards){
         }
+        },
 
-        const outerHtml = `
-            <ul class="card-container">
-                ${cardList}
-            </ul>
-        `;
-
-        let cardsContainer = document.querySelector('#cards');
-        cardsContainer.insertAdjacentHTML("beforeend", outerHtml);
-    },
     // here comes more features
     loadStatus: function (statusId) {
         // retrieves statuses and makes showStatuses called

@@ -3,8 +3,8 @@ import csv
 from util import connection_handler
 
 STATUSES = """Select * from statuses"""
-BOARDS = """Select * from boards"""
-CARDS = """Select * from cards"""
+BOARDS = """Select * from boards order by boards_id ASC"""
+CARDS = """Select * from cards order by cards_id ASC"""
 
 _cache = {}  # We store cached data in this dict to avoid multiple file readings
 
