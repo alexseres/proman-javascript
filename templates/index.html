@@ -16,8 +16,17 @@
     </head>
     <body>
         <h1>ProMan</h1>
-        <div id="boards">Boards</div>
-        <div id="cards">Cards</div>
-        <div id="statuses">statuses</div>
+        <template>
+            <div class="board-container">
+                <section class="board">
+                    <div class="board-header"><span id="test" class="board-title"></span>
+                        <button class="board-add">Add Card</button>
+                        <button class="board-toggle"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="board-columns">
+                    </div>
+                </section>
+            </div>
+        </template>
     </body>
 </html>

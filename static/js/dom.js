@@ -15,22 +15,13 @@ export let dom = {
         // shows boards appending them to #boards div
         // it adds necessary event listeners also
 
-        let boardList = '';
-
+        let temp = document.getElementsByTagName("template")[0];
         for(let board of boards){
-            boardList += `
-                <li>${board.boards_title}</li>
-            `;
+            temp.content.getElementById("test").innerText = `${board.boards_title}`;
+            let clone = temp.content.cloneNode(true);
+            document.body.appendChild(clone);
         }
 
-        const outerHtml = `
-            <ul class="board-container">
-                ${boardList}
-            </ul>
-        `;
-
-        let boardsContainer = document.querySelector('#boards');
-        boardsContainer.insertAdjacentHTML("beforeend", outerHtml);
     },
     loadCards: function (boardId) {
         // retrieves cards and makes showCards called
