@@ -14,11 +14,11 @@ export let dom = {
     showBoards: function (boards) {
         // shows boards appending them to #boards div
         // it adds necessary event listeners also
-
         let temp = document.getElementsByTagName("template")[0];
         for(let board of boards){
             dom.loadCards(board.boards_id);
             temp.content.getElementById("board-header").innerText = `${board.boards_title}`;
+            temp.content.querySelector(".board-columns").id = `${board.boards_id}`;
             let clone = temp.content.cloneNode(true);
             document.body.appendChild(clone);
         }
@@ -33,7 +33,14 @@ export let dom = {
     showCards: function (cards) {
         // shows the cards of a board
         // it adds necessary event listeners also
-        for (let card of cards){
+        let temp = document.getElementsByTagName("template")[1];
+        for(let card of cards){
+            temp.content.getElementById("card").innerText = `${card.cards_title}`;
+            let clone = temp.content.cloneNode(true);
+            document.querySelector(`#${card.statuses_id}`).appendChild(clone);
+            document.body.appendChild(clone)
+
+
         }
         },
 
